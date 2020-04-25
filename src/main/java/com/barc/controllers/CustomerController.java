@@ -23,12 +23,16 @@ public class CustomerController {
 		System.out.println("payload coming form method  is -  " + employee);
 	}
 
+	
 	@RequestMapping(value = "/getemp/{id}",method = RequestMethod.GET,produces = "application/json")
 	public Employee getCustomer(@PathVariable("id") long id) {
+		
 		System.out.println("method is calling ");
 		 if(id==20) {
 			 return new Employee(20, "Mohan", "Latur");
 		 }
 		return new Employee(101, "aditya", "Pune");
 	}
+	
+	
 }
