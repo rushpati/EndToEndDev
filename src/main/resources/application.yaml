@@ -1,0 +1,9 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    Config:
+      server:
+         git:
+          uri:https:https://github.com/rushpati/EndToEndDev.git  
