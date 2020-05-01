@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.barc.entities.Employee;
+import com.barc.exceptions.StudentNotFoundExcetion;
 
 @RestController
 //@Controller
@@ -28,9 +29,12 @@ public class CustomerController {
 	public Employee getCustomer(@PathVariable("id") long id) {
 		
 		System.out.println("method is calling ");
-		 if(id==20) {
-			 return new Employee(20, "Mohan", "Latur");
-		 }
+		try {
+			if(!(id==20)) throw new StudentNotFoundExcetion("student is not availabe with id " + id);	
+		}
+		catch(StudentNotFoundExcetion ex) {
+			ex.printStackTrace(); 
+		}
 		return new Employee(101, "aditya", "Pune");
 	}
 	

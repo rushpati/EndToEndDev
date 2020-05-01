@@ -1,7 +1,12 @@
 package com.barc.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
 
+	@Id
 	private long eid;
 	private String name;
 	private String address;
